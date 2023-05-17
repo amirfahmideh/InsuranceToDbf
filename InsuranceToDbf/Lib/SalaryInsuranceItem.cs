@@ -58,16 +58,16 @@ namespace InsuranceToDbf.Lib
                 Month,
             this.ListNo,
             this.PersonnelInsuranceNo,
-            convert.get_Unicode_To_IranSystem(this.FirstName),
-            convert.get_Unicode_To_IranSystem(this.LastName),
-            convert.get_Unicode_To_IranSystem(this.FatherName),
-            convert.get_Unicode_To_IranSystem(this.BirthCertificateNo),
-            convert.get_Unicode_To_IranSystem(this.BirthCertificateAreaName),
+            convert.Win2Dos(this.FirstName),
+            convert.Win2Dos(this.LastName),
+            convert.Win2Dos(this.FatherName),
+            convert.Win2Dos(this.BirthCertificateNo),
+            convert.Win2Dos(this.BirthCertificateAreaName),
             !String.IsNullOrEmpty(this.BirthCertificateDateFa) ? this.BirthCertificateDateFa.Replace("/", ""): this.BirthCertificateDateFa,
             this.BirthDateFa.Replace("/",""),
-            convert.get_Unicode_To_IranSystem(this.SexTitle),
-            convert.get_Unicode_To_IranSystem(this.CitizenshipStatusTitle),
-            convert.get_Unicode_To_IranSystem(this.OccupationDescription),
+            convert.Win2Dos(this.SexTitle),
+            convert.Win2Dos(this.CitizenshipStatusTitle),
+            convert.Win2Dos(this.OccupationDescription),
             !String.IsNullOrEmpty(this.StartWorkDateFa) ? this.StartWorkDateFa.Replace("/", "") : this.StartWorkDateFa,
             !String.IsNullOrEmpty(this.EndWorkDateFa) ? this.EndWorkDateFa.Replace("/", "") : this.EndWorkDateFa,
             this.DaysOperationCount,
@@ -79,7 +79,7 @@ namespace InsuranceToDbf.Lib
             this.InsuredContributionInsurance,
             this.PercentageRate,
             this.OccupationCode,
-            convert.get_Unicode_To_IranSystem(this.NationalNo)
+            convert.Win2Dos(this.NationalNo)
         };
         }
     }
