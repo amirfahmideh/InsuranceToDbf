@@ -4,6 +4,9 @@ using InsuranceToDbf.Convertor;
 
 namespace InsuranceToDbf.Lib
 {
+    /// <summary>
+    /// اطلاعات مربوط به حقوق پرسنل
+    /// </summary>
     public class SalaryInsuranceItem
     {
         /// <summary>

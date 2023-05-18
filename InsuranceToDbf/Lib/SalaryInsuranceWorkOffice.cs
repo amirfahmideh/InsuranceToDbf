@@ -3,24 +3,27 @@ using System.Text;
 using InsuranceToDbf.Convertor;
 namespace InsuranceToDbf.Lib
 {
+    /// <summary>
+    /// اطلاعات مربوط به محل کار
+    /// </summary>
     public class SalaryInsuranceWorkOffice
     {
         /// <summary>
         /// DSK_ID: کد کارگاه
         /// </summary>
-        public string WorkOfficeInsuranceCode { get; set; }
+        public string WorkOfficeInsuranceCode { get; set; } = "";
         /// <summary>
         /// DSK_Name: نام کارگاه
         /// </summary>
-        public string WorkOfficeInsuranceName { get; set; }
+        public string WorkOfficeInsuranceName { get; set; } = "";
         /// <summary>
         /// DSK_FARM: نام کارفرما
         /// </summary>
-        public string WorkOfficeMasterName { get; set; }
+        public string WorkOfficeMasterName { get; set; } = "";
         /// <summary>
         /// DSK_ADRS: آدرس کارگاه
         /// </summary>
-        public string WorkOfficeAddress { get; set; }
+        public string WorkOfficeAddress { get; set; } = "";
         /// <summary>
         /// DSK_YY: سال عملکرد
         /// </summary>
@@ -117,18 +120,18 @@ namespace InsuranceToDbf.Lib
                 convert.get_Unicode_To_IranSystem(this.ListDescription),
                 PersonnelCount,
                 DaysOperationCount,
-                DailyWagePrice,
-                MonthlyWagePrice,
-                MonthlyReward,
-                MonthlyWageAndReward,
-                MonthlyWageAndRewardTotal,
-                EmployeeContributionInsurance,
-                EmployerContributionInsurance,
-                UnemploymentInsurancePortion,
-                ContributionInsuranceRate ?? null,
+                DailyWagePrice ?? 0,
+                MonthlyWagePrice ?? 0,
+                MonthlyReward ?? 0,
+                MonthlyWageAndReward ?? 0,
+                MonthlyWageAndRewardTotal ?? 0,
+                EmployeeContributionInsurance ?? 0,
+                EmployerContributionInsurance ?? 0,
+                UnemploymentInsurancePortion ?? 0,
+                ContributionInsuranceRate ?? 0,
                 0,
                 0,
-                convert.get_Unicode_To_IranSystem(this.ContractNumber?.ToString())
+                convert.get_Unicode_To_IranSystem(this.ContractNumber)
             };
         }
     }

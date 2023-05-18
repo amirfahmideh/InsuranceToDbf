@@ -1,3 +1,4 @@
+using System.Text;
 using InsuranceToDbf.Convertor;
 using InsuranceToDbf.Lib;
 namespace InsuranceToDbf.Test;
@@ -11,6 +12,8 @@ public class LibTest
     [Test]
     public void DateTimeTest()
     {
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
         SalaryInsuranceWorkOffice wo = new SalaryInsuranceWorkOffice
         {
             ContractNumber = "1",
@@ -47,7 +50,6 @@ public class LibTest
                 CitizenshipStatus = CitizenshipStatusEnum.Iranian,
                 DailyWagePrice = 100,
                 DaysOperationCount = 31,
-                EmployerContributionInsurance = 42,
                 FatherName = "پدر",
                 FirstName = "نام",
                 LastName = "نام خانوادگی",
@@ -61,25 +63,18 @@ public class LibTest
                 MonthlyWagePrice = 22,
                 OccupationCode = "100",
                 OccupationDescription = "شرح شغل",
-                PersonnelId = 100,
                 PercentageRate = 50,
                 PersonnelInsuranceNo = "554656",
                 Sex = SexEnum.Man,
                 StartWorkDate = DateTime.Now.AddYears(-1),
-                UnemploymentInsurancePortion = 10,
-                WorkOfficeId = 2,
-                WorkOfficeName = "محل خدمت",
                 WorkOfficeInsuranceCode = "10",
                 Year = 1402
-    }
+        }
         };
 
         InsuranceToDbf.Export.ExportToDbf.Export(wo, items, out MemoryStream ms, out MemoryStream msItems);
-        Console.WriteLine("MS Length");
-        Console.WriteLine(ms.Length);
-        string path = @"D:\header.dbf";
-        FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
-        ms.WriteTo(fs);
-        Assert.Pass();
+
+        Assert.Greater(ms.Length, 0, "Workoffice file length is not valid!");
+        Assert.Greater(msItems.Length, 0, "Personnel file length is not valid!");
     }
 }
