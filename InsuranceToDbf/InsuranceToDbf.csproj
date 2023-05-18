@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>InsuranceToDbf</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.3 </Version>
     <Authors>Amir Fahmideh</Authors>
     <Company>amirfahmideh.ir</Company>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,9 +10,5 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="dotnetdbf" Version="6.0.0.3" />
-  </ItemGroup>
 
 </Project>

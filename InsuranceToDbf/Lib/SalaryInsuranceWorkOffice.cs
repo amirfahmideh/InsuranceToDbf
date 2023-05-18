@@ -107,14 +107,14 @@ namespace InsuranceToDbf.Lib
             var convert = new ConvertWindowsPersianToDos();
             return new object[] {
                 this.WorkOfficeInsuranceCode,
-                convert.Win2Dos(this.WorkOfficeInsuranceName),
-                convert.Win2Dos(this.WorkOfficeMasterName),
-                convert.Win2Dos(this.WorkOfficeAddress),
+                convert.get_Unicode_To_IranSystem(this.WorkOfficeInsuranceName),
+                convert.get_Unicode_To_IranSystem(this.WorkOfficeMasterName),
+                convert.get_Unicode_To_IranSystem(this.WorkOfficeAddress),
                 ListType,
                 YearTwo,
                 Month,
                 ListNo,
-                convert.Win2Dos(this.ListDescription),
+                convert.get_Unicode_To_IranSystem(this.ListDescription),
                 PersonnelCount,
                 DaysOperationCount,
                 DailyWagePrice,
@@ -128,7 +128,7 @@ namespace InsuranceToDbf.Lib
                 ContributionInsuranceRate ?? null,
                 0,
                 0,
-                convert.Win2Dos(this.ContractNumber?.ToString())
+                convert.get_Unicode_To_IranSystem(this.ContractNumber?.ToString())
             };
         }
     }

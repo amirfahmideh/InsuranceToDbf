@@ -1,5 +1,4 @@
 using System.Text;
-using DotNetDBF;
 using InsuranceToDbf.Lib;
 
 namespace InsuranceToDbf.Export;
@@ -14,8 +13,6 @@ public static class ExportToDbf
     /// <param name="personnelStream">خروجی اطلاعات کارکنان بصورت stream</param>
     public static void Export(SalaryInsuranceWorkOffice workOffice, List<SalaryInsuranceItem> personnel, out MemoryStream workOfficeStream, out MemoryStream personnelStream)
     {
-        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
         workOfficeStream = new MemoryStream();
         ExportDSKKAR(workOfficeStream, workOffice.ToDbfFormat());
         workOfficeStream.Position = 0;
