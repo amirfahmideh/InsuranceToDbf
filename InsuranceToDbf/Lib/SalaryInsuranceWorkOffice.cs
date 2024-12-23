@@ -105,6 +105,16 @@ namespace InsuranceToDbf.Lib
         /// </summary>
         public string ContractNumber { get; set; } = "";
 
+        /// <summary>
+        /// DSK_INC: مجموع پایه سنواتی
+        /// </summary>
+        public decimal? RightYearsPrice { get; set; }
+
+        // <summary>
+        /// DSK_SPOUSE: مجموع حق تاهل
+        /// </summary>
+        public decimal? SpouseRightPrice { get; set; }
+
         public object[] ToDbfFormat()
         {
             var convert = new ConvertWindowsPersianToDos();
@@ -131,7 +141,9 @@ namespace InsuranceToDbf.Lib
                 ContributionInsuranceRate ?? 0,
                 0,
                 0,
-                convert.get_Unicode_To_IranSystem(this.ContractNumber)
+                convert.get_Unicode_To_IranSystem(this.ContractNumber),
+                this.RightYearsPrice ?? 0,
+                this.SpouseRightPrice ?? 0,
             };
         }
     }

@@ -38,7 +38,9 @@ public class LibTest
             WorkOfficeInsuranceCode = "5",
             WorkOfficeInsuranceName = "عنوان آزمایشی",
             WorkOfficeMasterName = "عنوان",
-            Year = 1402
+            Year = 1402,
+            RightYearsPrice = 100,
+            SpouseRightPrice = 120,
         };
 
         List<SalaryInsuranceItem> items = new List<SalaryInsuranceItem>() {
@@ -68,7 +70,9 @@ public class LibTest
                 Sex = SexEnum.Man,
                 StartWorkDate = DateTime.Now.AddYears(-1),
                 WorkOfficeInsuranceCode = "10",
-                Year = 1402
+                Year = 1402,
+                RightYearsPrice = 100,
+                SpouseRightPrice = 120,
         }
         };
 

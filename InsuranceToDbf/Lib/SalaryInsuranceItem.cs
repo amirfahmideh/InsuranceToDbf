@@ -143,6 +143,16 @@ namespace InsuranceToDbf.Lib
         /// </summary>
         public string NationalNo { get; set; } = "";
 
+        /// <summary>
+        /// DSW_INC: پایه سنواتی
+        /// </summary>
+        public decimal? RightYearsPrice { get; set; }
+
+        // <summary>
+        /// DSW_SPOUSE: حق تاهل
+        /// </summary>
+        public decimal? SpouseRightPrice { get; set; }
+
         public object[] ToDbfFormat()
         {
             var convert = new ConvertWindowsPersianToDos();
@@ -173,7 +183,10 @@ namespace InsuranceToDbf.Lib
             this.InsuredContributionInsurance ?? 0,
             this.PercentageRate ?? 0,
             this.OccupationCode,
-            convert.get_Unicode_To_IranSystem(this.NationalNo)
+            convert.get_Unicode_To_IranSystem(this.NationalNo),
+            this.RightYearsPrice ?? 0,
+            this.SpouseRightPrice ?? 0,
+
         };
         }
     }

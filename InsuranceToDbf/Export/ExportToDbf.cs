@@ -56,6 +56,8 @@ public static class ExportToDbf
                                             new DBFField("DSK_PRATE", NativeDbType.Numeric, 2),
                                             new DBFField("DSK_BIMH", NativeDbType.Numeric, 12),
                                             new DBFField("MON_PYM", NativeDbType.Char, 3),
+                                            new DBFField("DSK_INC", NativeDbType.Numeric, 19),
+                                            new DBFField("DSK_SPOUSE", NativeDbType.Numeric, 19),
                     };
                 writer.AddRecord(values);
                 writer.Write(ms);
@@ -105,6 +107,8 @@ public static class ExportToDbf
                                             new DBFField("DSW_PRATE", NativeDbType.Numeric, 2),
                                             new DBFField("DSW_JOB", NativeDbType.Char, 6),
                                             new DBFField("PER_NATCOD", NativeDbType.Char, 10),
+                                            new DBFField("DSW_INC", NativeDbType.Numeric, 19),
+                                            new DBFField("DSW_SPOUSE", NativeDbType.Numeric, 19),
                     };
                 foreach (var values in valuesRow)
                 {
