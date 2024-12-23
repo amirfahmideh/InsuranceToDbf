@@ -2,13 +2,42 @@
 
   <PropertyGroup>
     <PackageId>InsuranceToDbf</PackageId>
-    <Version>1.0.4</Version>
-    <Authors>Amir Fahmideh</Authors>
-    <Company>amirfahmideh.ir</Company>
+		<Authors>Amir Fahmideh</Authors>
+		<Description>net core library to generate Iranian salary insurance dbf file format</Description>
+		<PackageProjectUrl>https://github.com/amirfahmideh/InsuranceToDbf</PackageProjectUrl>
+		<PackageTags>Insurance Disk</PackageTags>
+		<EnablePackageValidation>true</EnablePackageValidation>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
   </PropertyGroup>
-
+	<PropertyGroup>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+  <PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+  	<ItemGroup>
+		<!-- Add a README.md next to the csproj -->
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+	<PropertyGroup>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<!-- If all members are not documented, you can disable the compiler warnings -->
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
+	</PropertyGroup>
+    	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="MinVer" Version="4.3.0">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+	</ItemGroup>
 </Project>
