@@ -5,7 +5,7 @@
 
 ## نحوه استفاده
 ``
-dotnet add package InsuranceToDbf --version 1.0.3
+dotnet add package InsuranceToDbf
 ``
 
 ## نمونه استفاده
