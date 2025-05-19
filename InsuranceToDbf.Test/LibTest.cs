@@ -66,7 +66,7 @@ public class LibTest
                 OccupationCode = "100",
                 OccupationDescription = "شرح شغل",
                 PercentageRate = 50,
-                PersonnelInsuranceNo = "554656",
+                PersonnelInsuranceNo = "000554656",
                 Sex = SexEnum.Man,
                 StartWorkDate = DateTime.Now.AddYears(-1),
                 WorkOfficeInsuranceCode = "10",
